@@ -1,0 +1,273 @@
+@charset "utf-8";
+
+/* ----------------
+	公共样式开始
+----------------- */
+/*长页面滚轮*/
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+img {
+	display: block;
+	width: 100%;
+}
+
+.page {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: url(../images/main_bg.jpg) no-repeat center center/100% 100%;
+}
+
+/* 遮罩 */
+.mask {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: rgba(0, 0, 0, 0.5) url(../images/bg_upper.png) no-repeat center top/100%;
+}
+
+/* 开始引导 */
+.start,.continue {
+	position: absolute;
+	top: 50%;
+	margin-top: -60%;
+}
+
+.guidet,.continue-txt {
+	width: 100%;
+	height: 6rem;
+	margin: 0 auto;
+	background: url(../images/Game_ref.png) no-repeat center center/100% 100%;
+}
+
+.guidet p,.continue-txt p {
+	width: 80%;
+	margin: 0% auto;
+	padding-top: 30%;
+	font-size: 0.3rem;
+	color: #f7d18c;
+	line-height: 0.4rem;
+	text-align: justify;
+}
+
+.start-btn,.continue-btn{
+	width: 40%;
+	margin: 5% auto 0;
+}
+
+.header {
+	position: relative;
+	height: 4.5rem;
+}
+
+.left-probar {
+	background: url(../images/player_hp_bg.png) no-repeat center center/100% 100%;
+	width: 0.6rem;
+	height: 2.4rem;
+	position: absolute;
+	top: 1.7rem;
+	left: 0.4rem;
+}
+.probar{
+	overflow: hidden;
+}
+.probar img {
+	width: 0.45rem;
+	margin: 0.05rem auto 0;
+	height: 1.9rem;
+	position: relative;
+	top: 0;
+}
+.proround {
+	width: 74%;
+	margin: 0 auto;
+	position: relative;
+	left: 0;
+	right: 0;
+	bottom: 0.06rem;
+}
+.pronum{
+	position: absolute;
+	font-size: 0.25rem;
+	top: 0.05rem;
+	left: 0;
+	right: 0;
+	text-align: center;
+	font-weight: 600;
+}
+
+.left-figure {
+	width: 12%;
+	position: absolute;
+	bottom: 0.6rem;
+	left: 1.1rem;
+}
+
+.right-figure {
+	width: 32%;
+	position: absolute;
+	bottom: 0;
+	right: 0.8rem;
+}
+.right-probar {
+	background: url(../images/boss_hp_bg.png) no-repeat center center/100% 100%;
+	width: 0.4rem;
+	height: 2.4rem;
+	position: absolute;
+	top: 1.7rem;
+	right: 0.4rem;
+}
+.r-probar img{
+    width: 0.29rem;
+	height: 2.159rem;
+}
+.r-proround{
+	bottom: 0rem;
+}
+
+/* 游戏棋盘 */
+.txt-grid,.txt-grid2{
+	width: 80%;
+	margin: 0 auto 0;
+}
+.txt-grid ul,.txt-grid2 ul{
+	height: 5rem;
+	overflow: hidden;
+	display: flex;
+	flex-flow:row wrap;
+	justify-content: center;
+	align-items:center;
+	padding: 1.3rem 0 1.7rem;
+}
+
+.txt-grid ul li,.txt-grid2 ul li{
+	width: 25%;
+	position:relative;
+}
+.txt-grid ul li img,.txt-grid2 ul li img{
+	width: 100%;
+	margin: 0 auto;
+}
+
+.icon-bg,.icon-bg2{
+	position: absolute;
+	top: 0;
+	display: none;
+	width: 100%;
+}
+
+
+
+/* 冲击波 */
+.shock{
+	width: 45%;
+	position: absolute;
+	top: 50%;
+	left: -47%;
+}
+.shock-ani{
+	animation: shockx 1s ease ; 
+	-webkit-animation: shockx 1s ease ; 
+}
+@keyframes shockx{
+	0%{
+		left: -47%;
+		opacity: 0;
+	}
+	99%{
+		left: 40%;
+		opacity: 1;
+	}
+	100%{
+		left: 40%;
+		opacity: 0;
+	}
+}
+@-webkit-keyframes shockx{
+	0%{
+		left: -47%;
+		opacity: 0;
+	}
+	99%{
+		left: 40%;
+		opacity: 1;
+	}
+	100%{
+		left: 40%;
+		opacity: 0;
+	}
+}
+
+/* boss抖动 */
+.right-figure-boss{
+	animation:shake 0.8s ease 0.7s;
+	-webkit-animation:shake 0.8s ease 0.7s;
+}
+
+
+/* 阶段结束 */
+.phase-end{
+	width: 100%;
+	height: 4rem;
+	margin: 0 auto;
+	background: url(../images/Game_tips.png) no-repeat center center/100% 100%;
+	display: none;
+	position: absolute;
+	top: 50%;
+	margin-top: -40%;
+	z-index: 3;
+}
+.phase-end p {
+	width: 80%;
+	margin: 0 auto;
+	padding-top: 30%;
+	font-size: 0.4rem;
+	color: #f7d18c;
+	line-height: 0.4rem;
+	text-align: center;
+}
+
+/* 游戏结束 */
+.game-over{
+	width: 100%;
+	position: absolute;
+	top: 60%;
+	margin-top: -60%;
+	display: none;
+}
+.over-txt{
+	width: 100%;
+	height: 4rem;
+	margin: 0 auto;
+	background: url(../images/Game_tips.png) no-repeat center center/100% 100%;
+}
+.over-txt p{
+	width: 80%;
+    margin: 0 auto;
+    padding-top: 30%;
+    font-size: 0.4rem;
+    color: #f7d18c;
+    line-height: 0.4rem;
+    text-align: center;
+}
+.over-btn{
+	width: 90%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.over-back{
+	width: 40%;
+	float: left;
+}
+.over-next{
+	width: 40%;
+	float: right;
+}
+
+
+.disabled{ pointer-events: none; }
+

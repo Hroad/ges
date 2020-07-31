@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- 制作人信息 -->
+		<!--PM:[xxx] Designer:[胡璐] Developer:[xxx] date:2019-11-27  code:[IdealFET4/2019/gamecs-ges-12]-->
+		<title>心理旋转游戏</title>
+		<meta content="xxx招聘前程无忧官方网站，提供最新xxx招聘职位，校园招聘信息，xxx面试技巧等。帮助您顺利踏入xxx的大门，与众多xxx精英们开启一段崭新的职业生涯。" name="description">
+		<meta content="人才，招聘，简历，工作，求职，面试，应聘，跳槽，高薪，兼职，猎头，薪酬，薪资，培训，测评，人事" name="keywords">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="pragma" content="no-cach">
+		<meta name="robots" content="all">
+		<meta http-equiv="x-rim-auto-match" content="none">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">
+		<meta name="format-detection" content="address=no">
+		<meta name="format-detection" content="date=no">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		
+		<script type="text/javascript">
+		(function(document) {
+			var dcl = document.documentElement, wh;
+
+			function setRootRem() {
+				wh = dcl.clientHeight;
+				dcl.style.fontSize = 100 * (wh / 1206) + 'px';   // 1206为设计稿高度
+			}
+			setRootRem();
+			document.addEventListener('DOMContentLoaded', setRootRem, false);
+			window.addEventListener('resize', setRootRem, false);
+		})(document);
+	</script>
+	
+	
+	</head>
+	<body>
+		<!--loading-->
+		<div class="loading posa">
+			<div class="load-content xy">
+				<div class="cell">
+					<div class="progress"></div>
+				</div>
+				<div class="ideal">
+					<div class="head-wrap">
+						<div class="head">
+							<div class="face"></div>
+							<div class="hat"></div>
+						</div>
+					</div>
+				</div>
+				<span class="progress-num">0%</span>
+				<p>ideal配制</p>
+			</div>
+		</div>
+		<!--loading-->
+		<!-- 横屏 -->
+		<div class="cover posa">
+			<div class="iphone Rotate" ></div>
+			<p>为了更好的用户体验，请将屏幕竖向浏览！</p>
+		</div>
+		<!-- 横屏 -->
+		<!-- 图片预加载 -->
+		<div class="imgbox" style="display: none;">
+			<img src="images/icon-bg.png" >
+			<img src="images/icon1.png" >
+			<img src="images/icon2.png" >
+			<img src="images/icon3.png" >
+			<img src="images/icon4.png" >
+			<img src="images/icon5.png" >
+			<img src="images/icon6.png" >
+		</div>
+		
+		<!--music start-->
+		<!-- bgm -->
+		<audio id="autoplay" src="audio/bgm.mp3"></audio>
+		<!-- 选择正确 -->
+		<audio id="autoplay1" src="audio/actionCorrect.mp3"></audio>
+		<!-- 选择错误 -->
+		<audio id="autoplay2" src="audio/actionIncorrect.mp3"></audio>
+		<audio id="autoplay3" src="audio/attackFailed.mp3"></audio>
+		<!-- 攻击 -->
+		<audio id="autoplay4" src="audio/attackFire.mp3"></audio>
+		<!-- boss受伤 -->
+		<audio id="autoplay5" src="audio/bossAttack.mp3"></audio>
+		<audio id="autoplay6" src="audio/bossInjured.mp3"></audio>
+		<!--music end-->
+		
+		<div class="page">
+			<!-- 开始引导 -->
+			<div class="mask"></div>
+			<div class="start">
+				<div class="guidet">
+					<p>在屏幕中央会出现一些图形，你有5s的时间记住图形的位置，并迅速将他们配对。每成功配对一对图形即可对怪兽造成伤害；配对错误无伤害且减少3秒剩余时间，直到全部配对完成，你有90秒配对时间。</p>
+				</div>
+				<div class="start-btn"><img src="images/btn_start.png" ></div>
+				
+			</div>
+			
+			<!-- 第一阶段 -->
+			<div class="header">
+				<div class="healeft">
+					<div class="left-probar">
+						<div class="probar l-probar"><img src="images/player_hp.png" ></div>
+						<div class="proround l-proround"><img src="images/player_hp_bottom.png" ><span class="pronum">90</span></div>
+					</div>
+					<div class="left-figure"><img src="images/player.png" ></div>
+				</div>
+				<div class="hearight">
+					<div class="right-probar">
+						<div class="probar r-probar"><img src="images/boss_hp.png" ></div>
+						<div class="proround r-proround"><img src="images/boss_hp_bottom.png" ></div>
+					</div>
+					<div class="right-figure"><img src="images/boss.png" ></div>
+				</div>
+				
+				<!-- 冲击波 -->
+				<div class="shock"><img src="images/attackFire.png" ></div>
+				
+			</div>
+			
+			<div class="content">
+				<div class="txt-grid">
+					<ul>
+						
+					</ul>
+				</div>
+				<div class="txt-grid2">
+					<ul>
+						
+					</ul>
+				</div>
+			</div>
+			
+			
+			<!-- 阶段结束 -->
+			<div class="phase-end">
+				<p>第一阶段结束</p>
+			</div>
+			<div class="continue" style="display: none;">
+				<div class="continue-txt">
+					<p>第二阶段：<br>在屏幕中央会出现一些图形，你有5s时间记住图形的位置，随后这些图片会进行一些交换，你要并迅速将他们配对。每成功配对一对图形即可对怪兽造成伤害；配对错误无伤害且减少3s剩余时间，直到全部配对完成，你有90s配对时间。</p>
+				</div>
+				<div class="continue-btn"><img src="images/btn_continue.png" ></div>
+				
+			</div>
+			
+			<!-- 游戏结束 -->
+			<div class="game-over">
+				<div class="over-txt">
+					<p>游戏结束</p>
+				</div>
+				<div class="over-btn">
+					<div class="over-back"><img src="images/btn_return.png" ></div>
+					<div class="over-next"><img src="images/btn_next.png" ></div>
+				</div>
+			</div>
+			
+			
+			
+			
+		</div>
+		
+		
+		<script src="js/public/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public/lib.js" type="text/javascript" charset="utf-8"></script>
+		
+
+	</body>
+</html>
